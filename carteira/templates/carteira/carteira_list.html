@@ -1,1 +1,16 @@
 {% extends 'main/base.html' %}
+{% block content %}
+<li><a href="{%url 'carteira.novo' %}">Novo</a></li>
+LISTA DE CARTEIRAS (teste)
+<table border="1">
+    <tr>
+        <td>Carteira</td>
+    </tr>
+    {% for carteira in object_list %}
+    <tr>
+        <td>{{carteira.nome_carteira}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content%}
