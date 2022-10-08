@@ -1,14 +1,16 @@
 {% extends 'main/base.html' %}
 {% block content %}
 <li><a href="{%url 'carteira.novo' %}">Novo</a></li>
-LISTA DE CARTEIRAS (teste)
+LISTA DE CARTEIRAS
 <table border="1">
     <tr>
         <td>Carteira</td>
+        <td>Ação</td>
     </tr>
     {% for carteira in object_list %}
     <tr>
         <td>{{carteira.nome_carteira}}</td>
+        <td><a href="{% url 'carteira.editar' carteira.pk %}">Editar</a></td>
     </tr>
     {% endfor %}
 </table>
