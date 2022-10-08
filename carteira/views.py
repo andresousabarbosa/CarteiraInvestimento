@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Carteira
 from .forms import CarteiraForm
 
@@ -15,4 +15,8 @@ class CarteiraCreateView(CreateView):
 class CarteiraUpdateView(UpdateView):
     model = Carteira
     form_class = CarteiraForm
+    success_url = '/carteiras/'    
+
+class CarteiraDeleteView(DeleteView):
+    model = Carteira
     success_url = '/carteiras/'    
