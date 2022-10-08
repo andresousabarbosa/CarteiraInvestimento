@@ -1,7 +1,7 @@
 {% extends 'main/base.html' %}
 {% block content %}
 <li><a href="{% url 'categoria.novo' pk_carteira %}">Novo</a></li>
-LISTA DE Categoria
+LISTA DE Categoria 
 <table border="1">
     <tr>
         <td>Nome da Categoria</td>
@@ -11,9 +11,10 @@ LISTA DE Categoria
     {% for categoria in categorias %}
     <tr>
         <td>{{categoria.nome_categoria}}</td>
+        <td>{{categoria.percentual_alocacao}}</td>
         <td>
             <a href="{% url 'categoria.editar' pk_carteira categoria.pk %}">Editar</a>
-            <a href="{% url 'categoria.remover' pk_carteira categoria.pk %}">Remover</a>
+            <a href="{% url 'categoria.remover' pk_carteira categoria.pk %}">Remover</a>           
         </td>
         
     </tr>
