@@ -7,10 +7,14 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <ul>
-        <li><a href="{%url 'home' %}">Home</a></li>
-        <li><a href="{%url 'carteira.index' %}">Carteiras</a></li>
+    {% include 'main/menu.html' %}
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
     </ul>
+    {% endif %}
     {% block content %}
     {% endblock content%}
 </body>
